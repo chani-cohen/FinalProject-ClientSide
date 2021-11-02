@@ -5,12 +5,10 @@ import siteReducer from './sitesReducers';
 import ticketReducer from './ticketsReducers';
 import userReducer  from './userReducer';
 import streetReducer from './streetsReducer';
-import ordersOfTravelReducer  from './ordersOfTravelReducer';
+import orderReducer  from './ordersReducer';
 import orderOfThisCustomerReducer  from './ordersOfThisCustomerReducer';
 import stationReducer  from './stationsReducer';
 import neighborhoodReducer  from './neighborhoodsReducer';
-import driverReducer  from './driversReducer';
-import bussesReducer from './bussesReducer';
 
 export default combineReducers({
  list,
@@ -20,10 +18,8 @@ export default combineReducers({
  //!!
  userReducer,
  streetReducer,
- ordersOfTravelReducer,
+ orderReducer,
  orderOfThisCustomerReducer,
  stationReducer,
  neighborhoodReducer,
- driverReducer,
- bussesReducer,
 })

@@ -13,9 +13,6 @@ import { getOrdersMiddleWare } from '../redux/middleware/order.crud';
 import { getOrdersOfCustomerMiddleWare } from '../redux/middleware/orderOfThisCustomer.crud';
 import { getStationsMiddleWare } from '../redux/middleware/station.crud';
 import { getNeighborhoodsMiddleWare } from '../redux/middleware/neighborhood.crud';
-import { getDriversMiddleWare } from '../redux/middleware/driver.crud';
-import { getBussesMiddleWare } from '../redux/middleware/bus.crud';
-
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const enhancers = compose(
@@ -36,21 +33,8 @@ const store = createStore(rootReducer, {
     orderOfThisCustomerReducer: [],
     stationReducer: [],
     neighborhoodReducer: [],
-    driverReducer: [],
-    busReducer: [],
     },
     //!!
-    composeWithDevTools(applyMiddleware(ReduxThunk,
-        getTravelsMiddleWare, 
-        getSitesMiddleWare, 
-        getTicketsMiddleWare, 
-        getUserMiddleWare, 
-        getStreetsMiddleWare, 
-        getOrdersMiddleWare, 
-        getOrdersOfCustomerMiddleWare, 
-        getStationsMiddleWare, 
-        getNeighborhoodsMiddleWare, 
-        getDriversMiddleWare,
-        getBussesMiddleWare)));
+    composeWithDevTools(applyMiddleware(ReduxThunk,getTravelsMiddleWare, getSitesMiddleWare, getTicketsMiddleWare, getUserMiddleWare, getStreetsMiddleWare, getOrdersMiddleWare, getOrdersOfCustomerMiddleWare, getStationsMiddleWare, getNeighborhoodsMiddleWare)));
   
 export default store;

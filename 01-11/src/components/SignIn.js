@@ -108,10 +108,8 @@ function SignIn(props) {
         //!!שמירה בסטור את המשתמש הנוכחי
        
         props.setThisUser(u1);
-        
         //איפוס המשתנה בסטור של ההזמנות ללקוח
         //props.setOrdersOfThisCustomer();
-
 
         if(u1.userTypeId===1)
           handleClick("/Management");

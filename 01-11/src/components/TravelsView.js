@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItemText } from '@material-ui/core';
 //!!
-import { getAllTravels, getAllSites, getAllTickets, getUser, setUser, addOrder, getAllStations } from '../redux/actions';
+import { getAllTravels, getAllSites, getAllTickets, setUser, addOrder, getAllStations } from '../redux/actions';
 import '../../src/App.css';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -56,7 +56,10 @@ function TravelsView(props) {
 
     //!!
     const user = props.user || {};
+    // const user = props.user || {};
 
+    // console.log("user")
+    // console.log(user)
     const [bold, setBold] = useState(null);
 
 
@@ -115,6 +118,8 @@ function TravelsView(props) {
         props.getStations();
     }, [])
 
+
+
     //אפשר למחוק את זה?????
     useEffect(() => {
         console.log(listTravels);
@@ -131,6 +136,7 @@ function TravelsView(props) {
     useEffect(() => {
         console.log(listStations);
     }, [listStations])
+
 
 
     //משתנה סטייט לשמירת כמות הכרטיסים שנבחרה
@@ -188,13 +194,22 @@ function TravelsView(props) {
                                 </TableHead>
                                 <TableBody>
                                     {listTravels && listTravels.map((row) => (
-                                        <TableRow key={row.travelId} onClick={(e) => { AfterSelecetedRow(e, row) }} className={bold === row.travelId ? 'design_select_Red' : ''}>
+                                        // <TableRow key={row.travelId} onClick={(e) => { AfterSelecetedRow(e, row) }} className={bold === row.travelId ? 'design_select_Red' : ''}>
+                                        //     <TableCell component="th" scope="row">
+                                        //         1
+                                        //     </TableCell>
+                                        //     <TableCell align="right">1</TableCell>
+                                        //     <TableCell align="right">1</TableCell>
+                                        //     <TableCell align="right">2</TableCell>
+                                        // </TableRow>
+
+                                           <TableRow key={row.travelId} onClick={(e) => { AfterSelecetedRow(e, row) }} className={bold === row.travelId ? 'design_select_Red' : ''}>
                                             <TableCell component="th" scope="row">
                                                 {row.site.nameSite}
                                             </TableCell>
                                             <TableCell align="right">{row.travelDate.substring(0, 10)}</TableCell>
-                                            <TableCell align="right">{row.leavingTime}</TableCell>
-                                            <TableCell align="right">{row.returnTime}</TableCell>
+                                            <TableCell align="right">1</TableCell>
+                                            <TableCell align="right">2</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -282,3 +297,10 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(TravelsView);
+
+
+// אורית הלפר חברה לעבודה
+// נעמי גרמן חברה לכיתה
+// ציפי כהן שכנה מהרחוב(אמא של אורית)
+// אפרת מדמון מהעבודה 
+// דבורה אסוס

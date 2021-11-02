@@ -2,14 +2,9 @@
 * action types
 */
 export const ADD_ITEM = 'ADD_ITEM'
-
-/* Travels */
 export const ADD_TRAVEL = 'ADD_TRAVEL'
 export const GET_ALL_TRAVELS = 'GET_ALL_TRAVELS'
 export const SET_TRAVELS = 'SET_TRAVELS'
-export const UPDATE_TRAVEL= 'UPDATE_TRAVEL'
-export const DELETE_TRAVEL= 'DELETE_TRAVEL'
-
 
 /* Sites */
 export const ADD_SITE= 'ADD_SITE'
@@ -30,8 +25,8 @@ export const SET_STREETS= 'SET_STREETS'
 
 
 /* Orders */
-export const GET_ORDERS_BY_TRAVEL_ID= 'GET_ORDERS_BY_TRAVEL_ID'
-export const SET_ORDERS_OF_TRAVEL= 'SET_ORDERS_OF_TRAVEL'
+export const GET_ALL_ORDERS= 'GET_ALL_ORDERS'
+export const SET_ORDERS= 'SET_ORDERS'
 
 //הוספת הזמנה ללקוח מסוים!!
 export const ADD_ORDER='ADD_ORDER';
@@ -56,17 +51,6 @@ export const GET_ALL_STATIONS= 'GET_ALL_STATIONS'
 export const SET_STATIONS= 'SET_STATIONS'
 
 
-//Drivers
-export const GET_ALL_DRIVERS= 'GET_ALL_DRIVERS'
-export const SET_DRIVERS= 'SET_DRIVERS'
-export const ADD_DRIVER='ADD_DRIVER';
-
-
-//Busses
-export const GET_ALL_BUSSES= 'GET_ALL_BUSSES'
-export const SET_BUSSES= 'SET_BUSSES'
-export const ADD_BUS='ADD_BUS';
-
 
 
 /*
@@ -83,9 +67,6 @@ export function addTravel(travel) {
     return { type: ADD_TRAVEL, payload: travel }
 }
 
-export function updateTravel(travel){
-    return { type: UPDATE_TRAVEL, payload: travel }
-}
 
 export function getAllTravels() {
     return { type: GET_ALL_TRAVELS }
@@ -95,9 +76,6 @@ export function setTravels(travels) {
     return { type: SET_TRAVELS, payload: travels }
 }
 
-export function deleteTravel(travelId) {
-    return { type: DELETE_TRAVEL, payload: travelId }
-}
 
 
 /* Sites */
@@ -151,18 +129,20 @@ export function setNeighborhoods(neighborhoods){
 
 /* User */
 export function getUser() {
+    debugger;
     return { type: GET_USER }
 }
 export function setUser(user) {
+    debugger;
     return { type: SET_USER, payload: user }
 }
 
 /* Orders */
-export function getOrdersByTravelId(travelId) {
-    return { type: GET_ORDERS_BY_TRAVEL_ID, payload: travelId }
+export function getOrders() {
+    return { type: GET_ALL_ORDERS }
 }
-export function setOrdersOfTravel(orders) {
-    return { type: SET_ORDERS_OF_TRAVEL, payload: orders }
+export function setOrders(orders) {
+    return { type: SET_ORDERS, payload: orders }
 }
 export function addOrder(order) {
     return { type: ADD_ORDER, payload: order }
@@ -184,31 +164,4 @@ export function getAllStations() {
 
 export function setStations(stations) {
     return { type: SET_STATIONS, payload: stations }
-}
-
-/*  Drivers */
-export function getAllDrivers() {
-    return { type: GET_ALL_DRIVERS }
-}
-
-export function setDrivers(drivers) {
-    return { type: SET_DRIVERS, payload: drivers }
-}
-
-export function addDriver(driver) {
-    return { type: ADD_DRIVER, payload: driver }
-}
-
-
-/*  Busses */
-export function getAllBusses() {
-    return { type: GET_ALL_BUSSES }
-}
-
-export function setBusses(busses) {
-    return { type: SET_BUSSES, payload: busses }
-}
-
-export function addBus(bus) {
-    return { type: ADD_BUS, payload: bus }
 }

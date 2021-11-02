@@ -4,7 +4,7 @@ import {
 } from '../actions/index'
 
 function manageStreet(state = { streetsList: [] }, action) {
-    // debugger;
+    debugger;
     switch (action.type) {
         
         case SET_STREETS: return { streetsList: [...state.streetsList = action.payload] }

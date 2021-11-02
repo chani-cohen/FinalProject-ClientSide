@@ -4,7 +4,7 @@ import { SET_USER, GET_USER, setUser, getUser } from '../actions/index'
 
 export const getUserMiddleWare = store => next => action => {
     if (action.type === GET_USER) { 
-        debugger;     
+        debugger; 
         store.dispatch(getUser());
     }
     
